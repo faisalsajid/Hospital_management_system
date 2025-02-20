@@ -5,14 +5,13 @@ no_of_bed=500
 def log_in (self,id,password):
     login=input('insert your log in id: ')
     pin=input('enter your log in passowrd: ')
-    if login==id:
-        if pin==password:
-            print('log in complete')
-            print('1.add new patient')
-            print('2.see available no of bed')
-            print('3.see doctor list')
-            print('4.search patient')
-            choice=int(input())
+    if login==id and pin==password:
+        print('log in complete')
+        print('1.add new patient')
+        print('2.see available no of bed')
+        print('3.see doctor list')
+        print('4.search patient')
+        choice=int(input())
             
 log_in(None,id,password)
 
@@ -24,3 +23,9 @@ def add_new_patient(self):
 
 def search(self):
     id=int(input('enter patient id: '))
+
+import mysql.connector
+
+conn=mysql.connector.connect(host='localhost', password='SU92-BSCSM-F23-495', username='root')
+if conn.is_connected():
+    print("connection is established")
