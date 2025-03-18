@@ -1,3 +1,5 @@
+
+
 print("Thank You")
 print("Please select one from below")
 print("1.Book an appoipent")
@@ -20,6 +22,19 @@ def doc__app (self):
     patient_address=input("please enter your address: ")
     patient_age=int(input("please enter patient age: "))
 
+     cursor=conn.cursor()
+        insert_in_table="""insert into patient_info(patient_name,patient_address,patient_contact,patient_age) 
+            values (%s,%s,%s,%s)"""
+        data=(patient_name,patient_address,patient_contact,patient_age)
+        
+        try:
+            cursor.execute(insert_in_table, data)
+            conn.commit()
+            print("Data inserted successfully")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+        cursor.close()
+
 def medical_store(self):
 
     customer_name=input("please enter your name: ")
@@ -35,6 +50,19 @@ def lab(self):
     patient_contact=int(input("please enter your contact number: "))
     patient_address=input("please enter your address: ")
     patient_age=int(input("please enter patient age: "))
+
+     cursor=conn.cursor()
+        insert_in_table="""insert into patient_info(patient_name,patient_address,patient_contact,patient_age) 
+            values (%s,%s,%s,%s)"""
+        data=(patient_name,patient_address,patient_contact,patient_age)
+        
+        try:
+            cursor.execute(insert_in_table, data)
+            conn.commit()
+            print("Data inserted successfully")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+        cursor.close()
 
 if choice==1 :
     doc__app(None)    
