@@ -144,3 +144,5 @@ while(choice!=4):
         lab(None)
     elif choice==4 :
         exit()
+    elif:
+        print('error')
