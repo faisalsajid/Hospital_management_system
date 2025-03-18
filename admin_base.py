@@ -52,6 +52,27 @@ def search():
             print(f"Error: {err}")
     cursor.close()
 
+def doc():
+    cursor=conn.cursor()
+    doc_list = "SELECT * FROM doctor_details"
+
+    try:
+        cursor.execute(doc_list)
+        records = cursor.fetchall()
+        if records:
+            table = PrettyTable()
+            table.field_names = [desc[0] for desc in cursor.description]
+        
+            for row in records:
+                table.add_row(row)
+            
+            print(table)
+        else:
+            print("No records found.")
+    except  mysql.connector.Error as err:
+            print(f"Error: {err}")
+    cursor.close()
+
     
 
 def log_in (id,password):
@@ -59,17 +80,24 @@ def log_in (id,password):
     pin=input('enter your log in passowrd: ')
     
     if login==id and pin==password:
-        print('log in complete')
-        print('1.add new patient')
-        print('2.see doctor list')
-        print('3.search patient')
-        choice=int(input())
-        if choice==1:
-            add_new_patient()
-        elif choice==3:
-            search()
-        else:
-            print("error")
+        choice=0
+        while choice!=4 :
+            print('log in complete')
+            print('1.add new patient')
+            print('2.see doctor list')
+            print('3.search patient')
+            print('4.exit')
+            choice=int(input())
+            if choice==1:
+                add_new_patient()
+            elif choice==2:
+                doc()
+            elif choice==3:
+                search()
+            elif choice==4:
+                exit()
+            else:
+                print("error")
 
 log_in(id,password)
 
