@@ -21,9 +21,9 @@ def doc__app (self):
     print("3. Hasseb (ear specalist)")
     print("4. Adnan (eye specalist)")
     d1=('Afzal(skin specalist)')
-    d2=input('Muawar(bone specalist)')
-    d3=input('Hasseb (ear specalist)')
-    d4=input('Adnan (eye specalist)')
+    d2=('Muawar(bone specalist)')
+    d3=('Hasseb (ear specalist)')
+    d4=('Adnan (eye specalist)')
     choice=int(input("Enter your choice of doc: "))
 
     patient_name=input("please enter patient name: ")
