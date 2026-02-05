@@ -1,0 +1,73 @@
+/* Patient Details Page Styles */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.15);
+}
+
+.form-container h2 {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.table thead th {
+    background-color: #2563eb !important;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #eff6ff;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.alert {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20px;
+    }
+}
